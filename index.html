@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#14251f">
+<meta name="description" content="Entrenador de ajedrez con rival automático y explicaciones en español.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<title>Entrenador de ajedrez</title>
+</head>
+<body>
+<header>
+  <div><div class="eyebrow">ENTRENADOR PERSONAL</div><h1>Ajedrez</h1></div>
+  <div class="status" id="engineStatus">Preparando rival…</div>
+</header>
+<main>
+<section class="game">
+  <div class="bar">
+    <span id="turnLabel">Tu turno · Blancas</span>
+    <label class="level">Nivel
+      <select id="level">
+        <option value="0">1 · Principiante</option><option value="3">2 · Fácil</option>
+        <option value="6" selected>3 · Intermedio</option><option value="10">4 · Avanzado</option>
+        <option value="15">5 · Experto</option><option value="20">6 · Máximo</option>
+      </select>
+    </label>
+  </div>
+  <div class="board-wrap"><div id="board" aria-label="Tablero de ajedrez"></div></div>
+  <div class="controls">
+    <button id="undo">↶ Deshacer</button><button id="hint">◎ Pista</button><button id="restart" class="primary">Nueva partida</button>
+  </div>
+  <div class="move-line" id="moves">Las jugadas aparecerán aquí.</div>
+</section>
+<aside>
+  <section class="panel">
+    <h2>Aprende mientras juegas</h2>
+    <div id="lesson" class="lesson">Elige una pieza blanca y después la casilla a la que quieres moverla. El rival jugará automáticamente.</div>
+    <div id="thinking" class="thinking" hidden>El motor está pensando…</div>
+  </section>
+  <section class="panel">
+    <h2>Tu progreso</h2>
+    <div class="stats"><div><strong id="wins">0</strong><span>Victorias</span></div><div><strong id="draws">0</strong><span>Tablas</span></div><div><strong id="losses">0</strong><span>Derrotas</span></div></div>
+    <p class="small">Se guarda únicamente en este dispositivo.</p>
+  </section>
+  <section class="panel">
+    <h2>Cómo jugar</h2>
+    <p class="small">Toca una pieza blanca y luego su destino. Si hay varias jugadas legales, se iluminarán las casillas posibles. En promoción se elegirá dama automáticamente.</p>
+  </section>
+</aside>
+</main>
+<footer>Sin cuenta · Sin anuncios · Partidas guardadas localmente</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js" integrity="sha512-y7Z9Yw7Z9Yw7Z9Yw7Z9Yw7Z9Yw7Z9Yw7Z9Yw7Z9Yw7Z9Yw7Z9Yw7Z9Yw7Z9Yw7Z9Yw7Z9Yw7Z9Yw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="app.js"></script>
+</body>
+</html>
